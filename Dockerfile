@@ -24,6 +24,8 @@ RUN curl -sSL https://github.com/shyiko/kubetpl/releases/download/0.9.0/kubetpl-
 
 ENV PATH="/usr/local/bin:$PATH"
 
+USER ktool
+
 ENTRYPOINT []
 
 CMD ["--help"]
