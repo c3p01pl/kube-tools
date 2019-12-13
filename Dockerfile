@@ -1,13 +1,14 @@
-FROM docker:19.03.4
+FROM ubuntu:latest
 
 USER root
 
-#Install aws-cli
-RUN apk --update add \
+#Install aws-cli,make,git
+RUN apt update && apt install -y \
     python \
-    curl \
-    groff; \
-    set -ex; \
+    wget \
+    git \
+    make \
+    curl &&\
     wget -O get-pip.py 'https://bootstrap.pypa.io/get-pip.py' && \
     python get-pip.py --disable-pip-version-check --no-cache-dir && \
     pip install awscli
